@@ -1,0 +1,50 @@
+<div class="contenedor2">
+<h3>primer banda</h3>
+    <select type="text" [(ngModel)] = "banda1Select" name="banda1Select"   class="form-select" aria-label="Default select example">
+        <option *ngFor = "let color of colores" [style.background-color] = "color" >{{color}}</option>
+    </select>
+
+    <br>
+    <h3>Segunda banda</h3>
+    <select type="text" [(ngModel)] = "banda2Select" name="banda2Select" class="form-select" aria-label="Default select example">
+        <option *ngFor = "let color of colores" [style.background-color] = "color" >{{color}}</option>
+    </select>
+
+
+    <br>
+    <h3>tercer banda</h3>
+    <select type="text" [(ngModel)] = "banda3Select" name="banda3Select"  class="form-select" aria-label="Default select example">
+        <option *ngFor = "let color of colores"  [style.background-color] = "color" >{{color}}</option>
+    </select>
+
+    <br>
+
+    <mat-radio-group name="opciones" [(ngModel)] = "banda4Select">
+        <mat-radio-button *ngFor = "let color of tolerancia" name="opciones" [value]="color" style="margin: 10px">
+            {{color}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <br>
+
+    <button (click) = "calcularResistencias()">Calcular </button>
+    <br>
+    <table>
+        <tr>
+          <th>banda 1</th>
+          <th>banda 2</th>
+          <th>banda 3</th>
+          <th>banda 4</th>
+        </tr>
+        <tr>
+          
+          <td [style.background-color] = "banda1Select">{{banda1Select}}</td>
+          <td [style.background-color] = "banda2Select">{{banda2Select}} </td>
+          <td [style.background-color] = "banda3Select">{{banda3Select}}</td>
+          <td [style.background-color] = "banda4Select">{{banda4Select}}</td>
+        </tr>
+      </table>
+    <br>
+    <h1><p>Resultado: {{resistencia}}</p></h1>
+
+</div>

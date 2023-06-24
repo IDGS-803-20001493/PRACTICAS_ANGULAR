@@ -1,0 +1,29 @@
+<div class="contenedor3">
+
+    <mat-form-field>
+        <input type="text" name="nombre" matInput [(ngModel)] = "nombre" placeholder ="nombre">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input type="number" name="cantidadCompradores" matInput [(ngModel)] = "cantidadCompradores" placeholder ="cantidad Compradores">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input type="number" name="cantidadBoletos" matInput [(ngModel)] = "cantidadBoletos" placeholder ="cantidad boletos">
+    </mat-form-field>
+
+
+    <mat-radio-group name="opciones" [(ngModel)] = "tarjeta1">
+        <mat-radio-button *ngFor = "let op of opciones" name="opciones" [value]="op" style="margin: 10px">
+            {{op}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <br>
+
+    
+
+    <button (click) = "calcularTotal()">Calcular </button>
+
+    <h1><p>resultado: {{resultado}}</p></h1>
+
+</div>
