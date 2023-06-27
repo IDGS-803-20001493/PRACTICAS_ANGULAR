@@ -12,6 +12,9 @@ export class ResistenciasComponent {
   banda3!:string;
   banda4!:string;
 
+  minimo!:number;
+  maximo!:number;
+
   resistencia!:string;  
 
   banda1Select:string='brown';
@@ -83,6 +86,19 @@ export class ResistenciasComponent {
       case 'grey': this.resistencia = this.resistencia + '00000000Ω' + this.banda4;break;
       case 'white': this.resistencia = this.resistencia + '000000000Ω' + this.banda4;break;
     }
+
+    switch(this.banda4Select){
+      case 'gold':
+    this.minimo = (parseInt(this.resistencia) - (parseInt(this.resistencia) * 0.5));
+    this.maximo = (parseInt(this.resistencia) + (parseInt(this.resistencia) * 0.5)); break;
+
+    case 'silver':
+    this.minimo = (parseInt(this.resistencia) - (parseInt(this.resistencia) * 0.10));
+    this.maximo = (parseInt(this.resistencia) + (parseInt(this.resistencia) * 0.10)); break;
+
+    }
+
+    this.resistencia = this.resistencia +  ", minimo: " + this.minimo + " Maximo: " + this.maximo;
   }
 
 
