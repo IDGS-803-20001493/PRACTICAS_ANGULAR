@@ -12,11 +12,13 @@ import { FormsModule } from '@angular/forms';
 import {DistanciasModModule} from './ejercicios/distancias_mod/distancias_mod.module';
 import { ResistenciasModModule } from './ejercicios/resistencias_mod/resistencias_mod.module';
 import { CinepolisModModule } from './ejercicios/cinepolis_mod/cinepolis_mod.module';
+import { MenuComponent } from './ejercicios/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EjerciciosComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

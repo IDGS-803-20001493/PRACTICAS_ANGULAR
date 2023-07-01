@@ -89,8 +89,8 @@ export class ResistenciasComponent {
 
     switch(this.banda4Select){
       case 'gold':
-    this.minimo = (parseInt(this.resistencia) - (parseInt(this.resistencia) * 0.5));
-    this.maximo = (parseInt(this.resistencia) + (parseInt(this.resistencia) * 0.5)); break;
+    this.minimo = (parseInt(this.resistencia) - (parseInt(this.resistencia) * 0.05));
+    this.maximo = (parseInt(this.resistencia) + (parseInt(this.resistencia) * 0.05)); break;
 
     case 'silver':
     this.minimo = (parseInt(this.resistencia) - (parseInt(this.resistencia) * 0.10));
