@@ -4,13 +4,16 @@ import { ResistenciasModModule } from './ejercicios/resistencias_mod/resistencia
 import { DistanciasComponent } from './ejercicios/distancias/distancias.component';
 import { CinepolisComponent } from './ejercicios/cinepolis/cinepolis.component';
 import { ResistenciasComponent } from './ejercicios/resistencias/resistencias.component';
+import { PizzeriaComponent } from './ejercicios/pizzeria/pizzeria.component';
 
 const routes: Routes = [
   
   {path: '', redirectTo:'/home',pathMatch:'full'},
   {path: 'Resistencias', component:ResistenciasComponent},
   {path: 'Distancias PxP', component:DistanciasComponent},
-  {path: 'Cinepolis', component:CinepolisComponent}
+  {path: 'Cinepolis', component:CinepolisComponent},
+  
+  {path: 'Pizzeria', component:PizzeriaComponent}
 ];
 
 @NgModule({

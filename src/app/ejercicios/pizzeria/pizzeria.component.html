@@ -1,0 +1,222 @@
+
+      
+    
+
+
+
+<div class="container text-left">
+    <br>
+    <div class="row align-items-start">
+        <div class="col">
+            <div class="card" style="width: 32rem;">
+                <div class="card-body">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h1 class="card-title">Formulario de Pizzas</h1>
+                    <label for="">Nombre</label>
+                    <br>
+                    <input type="text" [(ngModel)]="nombre" class="form-control">
+                    
+
+                    <label for="">Domicilio</label>
+                    <br>
+                    <input type="text" [(ngModel)]="domicilio" class="form-control">
+
+                    <label for="">Telefono</label>
+                    <br>
+                    <input type="text" [(ngModel)]="telefono" class="form-control">
+
+                </div>
+            </div>
+
+
+            <br>
+            <div>
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h2 class="card-title">Detalles de la orden</h2>
+
+                        <div class="container text-left">
+                            <div class="row align-items-start">
+                                <div class="col">
+
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                          
+                                    <h3 for="">Tamaño</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <label for=""><input type="radio" [(ngModel)]="tamano" name="op"
+                                                value="Chica" >Chica $40</label>
+                                            <br>
+                                            <label for=""><input type="radio" [(ngModel)]="tamano" name="op"
+                                                value="Mediana">Mediana $80 </label>
+                                            <br>
+                                            <label for=""><input type="radio" [(ngModel)]="tamano" name="op"
+                                                value="Grande">Grande $120 </label>
+                                           </div>
+                                      </div>
+                                      
+                                    
+                                    
+
+
+                                </div>
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 for="">Ingredientes</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <input type="checkbox" [(ngModel)]="jamon" value="jamon">
+                                            <label>Jamon $10</label>
+                                            <br>
+                                            <input type="checkbox" [(ngModel)]="pina" value="piña">
+                                            <label>Piña $10</label>
+                                            <br>
+                                            <input type="checkbox" [(ngModel)]="champinones" value="champinones">
+                                            <label>Champi. $10</label>
+                                        </div>
+                                      </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <label for="">Cantidad Pizzas</label>
+                        <input type="number" [(ngModel)]="cantPizzas" style="width: 40px; margin-right: 100px;">
+                        
+                        <button (click)="agregar()" class="btn btn-primary btn-sm">Agregar</button>
+        
+
+
+                    </div>
+                </div>
+
+                <br>
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                      <h2 class="card-title">Productos</h2>
+                      <table class="table">
+
+                        <tr>
+                            <th>Cant.</th>
+                            <th>Tamaño</th>
+                            <th>Ingredientes</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                        <tr *ngFor="let sel of seleccionados">
+                            <td *ngIf="sel.id">{{sel.cantPizzas}}</td>
+                            <td *ngIf="sel.id">{{sel.tamano}}</td>
+    
+                            <td *ngIf="sel.id" class="text-tabla">{{sel.ingredientes}}</td>
+                            <td *ngIf="sel.id">{{sel.subtotal}}</td>
+                            <td *ngIf="sel.id"><button (click)="quitar(sel.id)" class="btn btn-warning">Quitar</button></td>
+                        </tr>
+                    </table>
+                    <br>
+    
+                    <button (click)="terminar()" class="btn btn-success">Listo!</button>
+                      
+                    </div>
+                  </div>
+                  <br><br>
+                
+
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+</div>
+
+
+
+
+
+        <div class="col">
+
+
+           
+
+
+<div class="card" style="width: 32rem; height:49rem;">
+    <div class="card-header">
+        <div class="container text-center">
+            <div class="col"><h1 class="card-title">Ordenes Pendientes</h1></div></div>
+        
+      </div>
+                <div class="card-body" style="overflow-y: scroll; ">
+            <div *ngFor="let order of ordenes">
+                <div *ngIf="order.id">
+                    <div class="card" style="width: 18rem; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);">
+                        <div class="card-body">
+
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col">
+
+                                        <h3 class="card-title">
+                                            <h2 class="card-title">--------- Orden {{order.id}} ---------</h2>
+                                            <h5 class="card-text">*Domicilio: {{order.domicilio}}*</h5>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <h3 class="card-title">
+                                            <h2 class="card-title">{{order.nombre}}</h2>
+                                        </h3>
+                                    </div>
+                                    <div class="col">
+
+                                        <h3 class="card-subtitle">#{{order.telefono}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="card-text">
+                                <pre>{{order.detalles}}</pre>
+                            </h3>
+
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col"></div>
+                                    <div class="col"></div>
+                                    <div class="col">
+                                        <h2 class="card-title"> Total: ${{order.total}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container text-center">
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <h2 class="card-title">--------------------------------</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <br>
+                    </div><br>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+                <br>
+            </div>
+
+        </div>
+    </div>
+</div>

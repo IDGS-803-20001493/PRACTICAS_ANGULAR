@@ -13,6 +13,8 @@ import {DistanciasModModule} from './ejercicios/distancias_mod/distancias_mod.mo
 import { ResistenciasModModule } from './ejercicios/resistencias_mod/resistencias_mod.module';
 import { CinepolisModModule } from './ejercicios/cinepolis_mod/cinepolis_mod.module';
 import { MenuComponent } from './ejercicios/menu/menu.component';
+import { PizzeriaComponent } from './ejercicios/pizzeria/pizzeria.component';
+import { PizzeriaModModule } from './ejercicios/pizzeria-mod/pizzeria-mod.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { MenuComponent } from './ejercicios/menu/menu.component';
     FormsModule,
     DistanciasModModule,
     ResistenciasModModule,
-    CinepolisModModule
+    CinepolisModModule,
+    PizzeriaModModule
   ],
   providers: [],
   bootstrap: [AppComponent]
